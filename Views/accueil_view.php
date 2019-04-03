@@ -14,7 +14,8 @@
             <div class="row justify-content-center">
                 <?php if(!isset($_SESSION['logged'])){ ?>
 
-                <span><a href="<?= PATH ?>login">Vous n'avez pas de compte ?</a></span>
+                <span><a href="<?= PATH ?>login">Connexion</a></span>
+                <span><a href="<?= PATH ?>create_account">Vous n'avez pas de compte ?</a></span>
 
                 <?php } ?>
 

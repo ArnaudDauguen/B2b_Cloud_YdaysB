@@ -14,12 +14,14 @@
 
             <table>
                 <tr>
-                    <th>nom du ficher</th>
+                    <th>file name</th>
                 </tr>
                 
                 <?php foreach ($files as $file){ ?>
                     <tr>
                         <td> <? echo $file['name'] ?></td>
+                        <td> <? echo $file['download'] ?></td>
+                        <td> <? echo $file['delete'] ?></td>
                     </tr>
 
                 <?php } ?>
