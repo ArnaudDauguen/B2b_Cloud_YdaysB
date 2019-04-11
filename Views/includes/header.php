@@ -1,5 +1,5 @@
 <?php
-    if(!$_SESSION){
+    if(!isset($_SESSION['user_id'])){
         header('Location:' . PATH);
     }
 

@@ -17,12 +17,11 @@
             //file already exist
             $file_already_uploaded = true;
         }
-
-        $destination = $_SERVER['DOCUMENT_ROOT']."/devweb_cloud/files/" . $hash;
+        $destination = "./files/" . $hash;
         $_FILES['file']['tmp_name'] = $destination;
 
-        if(!file_exists($_SERVER['DOCUMENT_ROOT']."/devweb_cloud/files")){
-            mkdir($_SERVER['DOCUMENT_ROOT']."/files", 0777, true);
+        if(!file_exists("./files")){
+            mkdir("./files", 0777, true);
         }
 
         if(!$file_already_uploaded){
@@ -32,14 +31,13 @@
         $id_new_file = AddFile::checkExistingFile($hash)['id'];
         if($id_new_file != null){
             AddFile::updateHave(intval($_SESSION['user_id']), $id_new_file);
+            Header("Location:" . PATH . "/home");
         }else{
             echo "import failled";
         }
 
 
 
-    }else{
-        echo "Choose a file";
     }
 
 
