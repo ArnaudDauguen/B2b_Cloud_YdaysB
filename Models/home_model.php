@@ -22,7 +22,7 @@ class Home {
         global $pdo;
 
         //on check le nombre d'user ayant ce fichier
-        $query = 'SELECT DISTINCT id FROM have WHERE id_file = (:file_id))';
+        $query = 'SELECT * FROM have WHERE id_file = (:file_id)';
         $datas = [
             ':file_id' => $file_id,
         ];
