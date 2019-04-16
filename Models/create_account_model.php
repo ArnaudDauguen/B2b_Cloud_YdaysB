@@ -39,6 +39,8 @@ class CreateAccount {
 
     public static function createUser(String $email, String $pseudo, String $password_hash){
         global $pdo;
+        $email = htmlspecialchars($email);
+        $pseudo = htmlspecialchars($pseudo);
 
         $query = 'INSERT INTO users (pseudo, email, password) VALUES ((:pseudo), (:email), (:password))';
         $datas = [

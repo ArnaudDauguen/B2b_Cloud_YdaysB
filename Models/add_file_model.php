@@ -22,7 +22,7 @@ class AddFile {
 
         $query = 'INSERT INTO files (name, hash) VALUES ((:name), (:hash))';
         $datas = [
-            ':name' => $name,
+            ':name' => htmlspecialchars($name),
             ':hash' => $hash,
         ];
 
