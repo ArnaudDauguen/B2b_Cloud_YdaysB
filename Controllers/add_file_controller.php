@@ -25,9 +25,9 @@
             move_uploaded_file($origin_path, $destination);
         }
         
-        
+        $potentialFile = AddFile::checkExistingFile($hash);
         if($potentialFile['id'] != null){
-            AddFile::updateHave(intval($_SESSION['user_id']), $id_new_file);
+            AddFile::updateHave(intval($_SESSION['user_id']), $potentialFile['id']);
             Header("Location:" . PATH . "/home");
         }else{
             echo "import failled";
